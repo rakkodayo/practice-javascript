@@ -1,64 +1,19 @@
 <!doctype html>
-
-<html lang="ja">
+<html lang = "ja">
     <head>
-        <meta charset="utf-8" />
-        <title>生年月日入力</title>
-        <script src="main.js"></script>
+        <meta charset = "UTF-8">
+        <title>ゲーム</title>
+        <script src = "main.js" defer></script>
     </head>
     <body>
-        <h1>生年月日を入力</h1>
-        <label>月:</label>
-        <input type ="number" id ="month" placeholder="月を入力" min ="1" max ="12">
-        <label>日:</label>
-        <input type = "number" id ="day" placeholder="日を入力" min ="1" max ="31">
-        <button onclick ="errorInput()">入力</button>
-        <div></div>
-        <label for = "pet-select">あなたの飼いたいペットは？</label>
-        <select>
-            <option value ="">選択してください</option>
-            <option value ="dog">犬</option>
-            <option value ="cat">猫</option>
-            <option value ="hamster">ハムスター</option>
-            <option value ="parrot">インコ</option>            
-            <option value ="spider">蜘蛛</option>            
-            <option value ="goldfish">金魚</option>
+        <h1>ゲームを選択してください</h1>
+        <select id ="game-selector">
+            <option value="none">--ゲームを選んでください--</option>
+            <option value="click-counter">クリッカーゲーム</option>
+            <option value="number-guess">数当てゲーム</option>
         </select>
-        <select name = "month2" id = month2></select>
-        <select name = "day2" id = day2>
-            <option value ="">選択してください</option>
-            <option value ="1">1</option>
-            <option value ="2">2</option>
-            <option value ="3">3</option>
-            <option value ="4">4</option>            
-            <option value ="5">5</option>            
-            <option value ="6">6</option>
-            <option value ="7">7</option>
-            <option value ="8">8</option>
-            <option value ="9">9</option>
-            <option value ="10">10</option>            
-            <option value ="11">11</option>
-            <option value ="12">12</option>
-            <option value ="13">13</option>
-            <option value ="14">14</option>            
-            <option value ="15">15</option>            
-            <option value ="16">16</option>
-            <option value ="17">17</option>
-            <option value ="18">18</option>
-            <option value ="19">19</option>
-            <option value ="20">20</option>            
-            <option value ="21">21</option>
-            <option value ="22">22</option>
-            <option value ="23">23</option>
-            <option value ="24">24</option>            
-            <option value ="25">25</option>            
-            <option value ="26">26</option>
-            <option value ="27">27</option>
-            <option value ="28">28</option>
-            <option value ="29">29</option>
-            <option value ="30">30</option>            
-            <option value ="31">31</option>
-        </select>
+        <div id = "game-container"></div>
     </body>
-    
 </html>
+
+    
