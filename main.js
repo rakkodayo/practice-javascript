@@ -1,4 +1,3 @@
-//function Clickcountergame(){
     let count = 0;
     const gameContainer = document.getElementById("game-container");
     
@@ -15,12 +14,17 @@
     counter.textContent = count;
     
     button1.addEventListener("click",function(){
-        count++;
+        if (count < 100) {
+            count++;
+        }
         counter.textContent = count;
     })
 
     button2.addEventListener("click",function(){
-        count = count + 10;
+        if (count < 100) {
+            count = count + 10;
+        }
+        
         counter.textContent = count;
     })
 
@@ -28,10 +32,37 @@
         count = 0;
         counter.textContent = count;
     })
+
+   
     
     gameContainer.appendChild(button1);
     gameContainer.appendChild(button2);
     //gameContainer.appendChild(button3);
     gameContainer.appendChild(counter);
 
-//}
+    const randomNumber = Math.floor(Math.random()*10)+1;
+    let message = document.createElement("p");
+    message.textContent = randomNumber;
+    let input = document.createElement("input");
+    input.type = "number"
+    input.max = 100
+    input.min = 1
+    input.placeholder = "好きな数字を入力してください (1-100)"
+    let button = document.createElement("button");
+    button.textContent = "予想";
+    
+    
+    button.addEventListener("click",function(){
+        const i = parseInt(input.value);
+        if (randomNumber < i) {
+            message.textContent = "もっと小さいよ"
+        }else if (randomNumber > i) {
+            message.textContent = "もっと大きいよ"
+        }else if (randomNumber === i) {
+            message.textContent = "正解！"
+        }
+        
+    })
+    gameContainer.appendChild(input);
+    gameContainer.appendChild(button);
+    gameContainer.appendChild(message);
