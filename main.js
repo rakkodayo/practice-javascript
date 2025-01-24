@@ -40,24 +40,30 @@
     //gameContainer.appendChild(button3);
     gameContainer.appendChild(counter);
 
-    const randomNumber = Math.floor(Math.random()*10)+1;
+    const randomNumber = Math.floor(Math.random()*1000)+1;
     let message = document.createElement("p");
-    message.textContent = randomNumber;
+    message.textContent = "";
     let input = document.createElement("input");
     input.type = "number"
-    input.max = 100
+    input.max = 1000
     input.min = 1
     input.placeholder = "好きな数字を入力してください (1-100)"
     let button = document.createElement("button");
-    button.textContent = "予想";
+    button.textContent = "確認";
+    let k = 0;
+    let kaunto = document.createElement("p");
     
     
     button.addEventListener("click",function(){
+        k++;
+        kaunto.textContent = k;
         const i = parseInt(input.value);
         if (randomNumber < i) {
             message.textContent = "もっと小さいよ"
         }else if (randomNumber > i) {
             message.textContent = "もっと大きいよ"
+        }else if (randomNumber - 50 <= i && i < randomNumber || randomNumber < i && i <= randomNumber + 50){
+            message.textContent = "惜しい"
         }else if (randomNumber === i) {
             message.textContent = "正解！"
         }
@@ -65,4 +71,5 @@
     })
     gameContainer.appendChild(input);
     gameContainer.appendChild(button);
+    gameContainer.appendChild(kaunto);
     gameContainer.appendChild(message);
