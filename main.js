@@ -73,3 +73,6 @@
     gameContainer.appendChild(button);
     gameContainer.appendChild(kaunto);
     gameContainer.appendChild(message);
+    
+
+
