@@ -1,3 +1,26 @@
+const gameSelector = document.getElementById("game-selector");
+const gameContainer = document.getElementById("game-container");
+gameContainer.innerHTML = "ゲームを選ぶとここに表示されます";
+gameSelector.addEventListener("change",function(){
+    gameContainer.innerHTML = "";
+    switch (gameSelector.value) {
+        case "none":
+            gameContainer.textContent = "ゲームを選ぶとここに表示されます"
+            break;
+        case "click-counter":
+            Clickcountergame();
+            break;
+        case "number-guess":
+            Numberguessgame();
+            break;
+        case "RPS":
+            RPS();
+            break;
+        default:
+            break;
+    }
+})
+function Clickcountergame(){
     let count = 0;
     const gameContainer = document.getElementById("game-container");
     
@@ -35,11 +58,14 @@
 
    
     
+    
     gameContainer.appendChild(button1);
     gameContainer.appendChild(button2);
     //gameContainer.appendChild(button3);
     gameContainer.appendChild(counter);
-
+}
+function Numberguessgame(){
+        const gameContainer = document.getElementById("game-container");
     const randomNumber = Math.floor(Math.random()*1000)+1;
     let message = document.createElement("p");
     message.textContent = "";
@@ -74,5 +100,5 @@
     gameContainer.appendChild(kaunto);
     gameContainer.appendChild(message);
     
-
+}
 
