@@ -8,7 +8,7 @@ let input2 = document.createElement("input");
 input2.type = "number";
 let button1 = document.createElement("button");
 button1.textContent = "+";
-button.addEventListener("click",function(){
+button1.addEventListener("click",function(){
     const i = parseInt(input1.value);
     const j = parseInt(input2.value);
     a = i + j;
@@ -16,7 +16,7 @@ button.addEventListener("click",function(){
 })
 let button2 = document.createElement("button");
 button2.textContent = "-";
-button.addEventListener("click",function(){
+button2.addEventListener("click",function(){
     
     const i = parseInt(input1.value);
     const j = parseInt(input2.value);
@@ -25,7 +25,7 @@ button.addEventListener("click",function(){
 })
 let button3 = document.createElement("button");
 button3.textContent = "×";
-button.addEventListener("click",function(){
+button3.addEventListener("click",function(){
    
     const i = parseInt(input1.value);
     const j = parseInt(input2.value);
@@ -34,7 +34,7 @@ button.addEventListener("click",function(){
 })
 let button4 = document.createElement("button");
 button4.textContent = "÷";
-button.addEventListener("click",function(){
+button4.addEventListener("click",function(){
   
     const i = parseInt(input1.value);
     const j = parseInt(input2.value);
